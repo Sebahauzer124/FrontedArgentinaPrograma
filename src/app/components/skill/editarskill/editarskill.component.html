@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row">
+        <div>
+            <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+                <div class="form-group">
+                    <label for="titulo"><h4>Titulo</h4></label>
+                    <input type="text" class="form-control" id="titulo" name="titulo" [(ngModel)]="skill.tituloSkill">
+                </div>
+                <div class="form-group">
+                    <label for="apellido"><h4>Imagen</h4></label>
+                    <input type="text" class="form-control" id="descripcion" name="descripcion"[(ngModel)]="skill.imagenSkill">
+                </div>
+
+                <div class="form-group">
+                    <label for="dni"><h4>Porcentaje</h4></label>
+                    <input type="text" class="form-control" id="fecha" name="fecha" [(ngModel)]="skill.porcentaje">
+                </div>
+
+            
+
+              
+
+               
+                <button class="btn btn-primary">
+                    Editar
+                </button>
+            </form>
+        </div>
+    </div>
+</div>

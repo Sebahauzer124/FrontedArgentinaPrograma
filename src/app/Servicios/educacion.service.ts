@@ -7,20 +7,23 @@ import { Educacion } from '../Model/educacion.model';
   providedIn: 'root'
 })
 export class EducacionService {
-  URL='https://bkdprueba1.herokuapp.com/educacion/'
+  URL='https://sebahauzer124.herokuapp.com/educacion/'
   constructor(private http:HttpClient) { }
 
   public getEducacion(): Observable<Educacion[]>{
-  return this.http.get<Educacion[]>(this.URL+'all');
+  return this.http.get<Educacion[]>(this.URL+'traer');
   }
   public addEducacion(educacion:Educacion): Observable<Educacion>{
-    return this.http.post<Educacion>(this.URL+'add',educacion);
+    return this.http.post<Educacion>(this.URL+'crear',educacion);
   }
-  public editEducacion(educacion:Educacion): Observable<Educacion>{
-    return this.http.put<Educacion>(this.URL+'update',educacion);
+  public update(id: number, educacion:Educacion) :Observable<any>{
+    return this.http.put<any>(this.URL + `editar/${id}`, educacion);
   }
   /* por que tiene que ser del tipo void y no Educacion*/
   public deleteEducacion(idEdu:number): Observable<void>{
-    return this.http.delete<void>(this.URL+'delete/${idEdu}');
+    return this.http.delete<void>(this.URL+`borrar/${idEdu}`);
   }
+  public detail(id: number): Observable<Educacion>{
+    return this.http.get<Educacion>(this.URL + `traer/${id}`);
+  } 
 }

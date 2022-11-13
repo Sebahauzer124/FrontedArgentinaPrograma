@@ -9,7 +9,7 @@ import { NuevoUsuario } from '../Model/nuevo-usuario';
   providedIn: 'root'
 })
 export class AuthService {
-  authURL = 'https://bkdprueba1.herokuapp.com/auth/';
+  authURL = 'https://sebahauzer124.herokuapp.com/auth/';
 
   constructor(private httpClient:HttpClient) { }
 public nuevo(nuevoUsuario:NuevoUsuario):Observable<any>{
@@ -19,4 +19,3 @@ public login(loginUsuario:LoginUsuario):Observable<JwtDto>{
   return this.httpClient.post<JwtDto>(this.authURL+ 'login',loginUsuario);
 }
 }
-

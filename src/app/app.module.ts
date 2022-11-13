@@ -19,6 +19,12 @@ import { LoginComponent } from './components/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PersonaService } from './Servicios/persona.service';
 import { interceptorProvider } from './Servicios/interceptor-service';
+import { NuevaeducacionComponent } from './components/educacion/nuevaeducacion/nuevaeducacion.component';
+import { EditareducacionComponent } from './components/educacion/editareducacion/editareducacion.component';
+import { NuevoelabComponent } from './components/elab/nuevoelab/nuevoelab.component';
+import { EditelabComponent } from './components/elab/editelab/editelab.component';
+import { EditarskillComponent } from './components/skill/editarskill/editarskill.component';
+import { NuevoskillComponent } from './components/skill/nuevoskill/nuevoskill.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +39,13 @@ import { interceptorProvider } from './Servicios/interceptor-service';
     ProyectoComponent,
     FooterComponent,
    HomeComponent,
-   LoginComponent
+   LoginComponent,
+   NuevaeducacionComponent,
+   EditareducacionComponent,
+   NuevoelabComponent,
+   EditelabComponent,
+   EditarskillComponent,
+   NuevoskillComponent
   ],
   imports: [
     BrowserModule,

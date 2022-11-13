@@ -7,20 +7,24 @@ import {Experiencia} from '../Model/experiencia.model';
   providedIn: 'root'
 })
 export class ExperienciaService {
-  URL='https://git.heroku.com/bkdprueba1.git/'
+  URL='https://sebahauzer124.herokuapp.com/experiencia/';
+
   constructor(private http:HttpClient) { }
 
   public getExperiencia(): Observable<Experiencia[]>{
-  return this.http.get<Experiencia[]>(this.URL+'all');
+  return this.http.get<Experiencia[]>(this.URL+'traer');
   }
-  public addExperiencia(experiencia:Experiencia): Observable<Experiencia>{
-    return this.http.post<Experiencia>(this.URL+'add',experiencia);
+  public addExperiencia(experiencia:Experiencia): Observable<any>{
+    return this.http.post<Experiencia>(this.URL+'crear',experiencia);
   }
-  public editExperiencia(experiencia:Experiencia): Observable<Experiencia>{
-    return this.http.put<Experiencia>(this.URL+'update',experiencia);
+  public update(id: number, experiencia:Experiencia) :Observable<any>{
+    return this.http.put<any>(this.URL + `editar/${id}`, experiencia);
   }
   /* por que tiene que ser del tipo void y no Educacion*/
   public deleteExperiencia(idExp:number): Observable<void>{
-    return this.http.delete<void>(this.URL+'delete/${idExp');
+    return this.http.delete<void>(this.URL+`borrar/${idExp}`);
   }
+  public detail(id: number): Observable<Experiencia>{
+    return this.http.get<Experiencia>(this.URL + `traer/${id}`);
+  } 
 }
