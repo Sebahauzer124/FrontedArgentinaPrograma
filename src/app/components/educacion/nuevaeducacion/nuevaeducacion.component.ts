@@ -26,7 +26,7 @@ ngOnInit(): void {
 }
 
 onCreate(): void{
-  const educacion = new Educacion(this.descEdu,this.fechaEdu,this.imagenEdu, this.tituloEdu );
+  const educacion = new Educacion(this.id,this.tituloEdu,this.fechaEdu,this.descEdu, this.imagenEdu );
   this.service.addEducacion(educacion).subscribe(
     data =>{
       alert("Cliente añadida correctamente");

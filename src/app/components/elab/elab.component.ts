@@ -4,6 +4,7 @@ import { Experiencia } from 'src/app/Model/experiencia.model';
 import { HttpErrorResponse } from '@angular/common/http';
 import { NgForm } from '@angular/forms';
 import { ExperienciaService } from 'src/app/Servicios/experiencia.service';
+import { TokenService } from 'src/app/Servicios/token.service';
 
 @Component({
   selector: 'app-elab',
@@ -16,7 +17,8 @@ export class ElabComponent implements OnInit {
   experiencia: Experiencia[] = [];
 
   isLogged =false;
-  constructor(private service: ExperienciaService)
+  constructor(private service: ExperienciaService ,
+     private tokenService: TokenService)
 
   { }
 
@@ -24,7 +26,12 @@ export class ElabComponent implements OnInit {
   ngOnInit(): void {
     
       this.cargarExperiencia();
-    
+      
+      if(this.tokenService.getToken()){
+        this.isLogged = true;
+      } else {
+        this.isLogged = false;
+      }
  
      
     }

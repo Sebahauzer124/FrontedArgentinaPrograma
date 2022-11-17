@@ -9,9 +9,20 @@ import { TokenService } from 'src/app/Servicios/token.service';
   styleUrls: ['./acercade.component.css']
 })
 export class AcercadeComponent implements OnInit {
-  persona: Persona = new Persona("","","","","");
+  id!:number;
+  apellido!:string;
+  img!:string;
+  nombre!:string;
+  acercaDe!:string;
+  titulo!:string;
+
+
+
+
+persona = new Persona(this.id,this.apellido,this.img,this.nombre,this.acercaDe,this.titulo);
   isLogged = false;
-  constructor(private service: PersonaService,private tokenService: TokenService
+  constructor(private service: PersonaService,
+    private tokenService: TokenService
     ) { }
 
   ngOnInit(): void {

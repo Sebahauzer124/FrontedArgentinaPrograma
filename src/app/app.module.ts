@@ -25,6 +25,7 @@ import { NuevoelabComponent } from './components/elab/nuevoelab/nuevoelab.compon
 import { EditelabComponent } from './components/elab/editelab/editelab.component';
 import { EditarskillComponent } from './components/skill/editarskill/editarskill.component';
 import { NuevoskillComponent } from './components/skill/nuevoskill/nuevoskill.component';
+import { EditarComponent } from './components/acercade/editar/editar.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { NuevoskillComponent } from './components/skill/nuevoskill/nuevoskill.co
    NuevoelabComponent,
    EditelabComponent,
    EditarskillComponent,
-   NuevoskillComponent
+   NuevoskillComponent,
+   EditarComponent
   ],
   imports: [
     BrowserModule,

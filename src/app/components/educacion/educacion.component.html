@@ -1,8 +1,8 @@
 <div class="row">
-  <h1>Educacion</h1>
-  <div class="col-lg-2">
-      <button type="button" class="btn btn-dark" routerLink="/nuevaedu" *ngIf="isLogged">
-          Agregar Educacion
+  <h1>Educación</h1>
+  <div class="col-lg-12" *ngIf="isLogged">
+      <button type="button" class="btn btn-dark" routerLink="/nuevaedu" >
+          Agregar Educación
       </button>
   </div>
   
@@ -11,24 +11,31 @@
   <div class="col-lg-11">
       <table class="table">
           <tbody>
+            <tr>
+                <td ><h5>Institución</h5></td>
+                <td ><h5>Fecha</h5></td>
+                <td ><h5>Descrpción</h5></td>
+                <td ><h5></h5></td>
+            </tr>
               <tr *ngFor="let Educacion of educacion">
                   <td>
-                      <h2>{{Educacion.tituloEdu}}</h2>
+                      <h6>{{Educacion.tituloEdu}}</h6>
                   </td>
-                  <td>{{Educacion.fechaEdu}}</td>
                   
+                  <td>{{Educacion.fechaEdu}}</td>
+                  <td>{{Educacion.descEdu}}</td>
                   <td><img src="{{Educacion.imagenEdu}} " style="width: 200px;" class="rounded" class="img-fluid rounded-circle"  >
                     
                     </td>
 
 
-                  <td >
+                  <td *ngIf="isLogged" >
                       <button class="btn btn-light" routerLink="/editedu/{{Educacion.id}}">
-                          <i class="bi bi-pencil-fill"></i> EDITAR</button>
+                          <i class="bi bi-pencil-fill"></i> </button>
                   </td>
-                  <td >
-                      <button class="btn btn-danger" (click)="delete(Educacion.id)">
-                          <i class="bi bi-trash-fill"></i> BORRAR</button>
+                  <td *ngIf="isLogged">
+                       <button class="btn btn-danger" (click)="delete(Educacion.id)">
+                          <i class="bi bi-trash-fill"></i></button>
                   </td>
               </tr>
           </tbody>

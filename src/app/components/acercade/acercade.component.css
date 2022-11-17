@@ -1,4 +1,13 @@
 .row{
     
     margin-top: 10%;
+    align-items: center;
 }
+
+.img-fluid{
+    
+    height: auto;
+    border-top-color: black;    
+
+} 
+

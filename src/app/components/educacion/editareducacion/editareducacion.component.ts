@@ -11,14 +11,15 @@ import { EducacionService } from 'src/app/Servicios/educacion.service';
 export class EditareducacionComponent implements OnInit {
 
   id!:number;
-  descEdu!:string;
-  fechaEdu!:string;
-  imagenEdu!:string;
   tituloEdu!:string;
-  personaId!:number;
+  fechaEdu!:string;
+  descEdu!:string;
+  imagenEdu!:string;
+  
+  
 
   
-  educacion = new Educacion(this.descEdu,this.fechaEdu,this.imagenEdu,this.tituloEdu);
+  educacion = new Educacion(this.id,this.tituloEdu,this.fechaEdu,this.descEdu,this.imagenEdu);
 
    constructor(
      private service: EducacionService,
